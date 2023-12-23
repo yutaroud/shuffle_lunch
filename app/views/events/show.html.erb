@@ -1,5 +1,7 @@
 <p><%= @event.title %></p>
 <p><%= @event.description %></p>
+<p>最大参加人数: <%= @event.max_participants %></p>
+<p>1グループあたりの参加数: <%= @event.max_group_size %></p>
 <p>開催日: <%= @event.open_date %></p>
 <p>締切: <%= @event.deadline %></p>
 
@@ -17,7 +19,7 @@
 <% end %>
 
 <% if @group.present? %>
-  <h2>参加者リスト</h2>
+  <h2>参加者リスト(<%= @group.length %>人)</h2>
   <% @group.each do |group| %>
     <p><%= group.group_number %></p>
     <p><%= group.user.nickname %></p>

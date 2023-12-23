@@ -1,0 +1,11 @@
+<p><%= @event.title %></p>
+<p><%= @event.description %></p>
+<p>開催日: <%= @event.open_date %></p>
+<p>締切: <%= @event.deadline %></p>
+
+<% if @group.present? %>
+  <h2>グループ</h2>
+  <% @group.each do %>
+    <%= group.id %>
+  <% end %>
+<% end %>

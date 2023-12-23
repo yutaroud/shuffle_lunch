@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   root "home#index"
 
   resources :events, :except => [:index]
+  resources :users, :only => [:create]
 end

@@ -7,7 +7,7 @@ ja:
     attributes:
         user:
           id: ID
-          nick_name: ニックネーム
+          nickname: ニックネーム
         event:
           title: タイトル
           description: 詳細

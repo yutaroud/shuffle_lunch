@@ -15,6 +15,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @group = Group.where(event_id: @event)
+    @user = User.new
   end
 
   private

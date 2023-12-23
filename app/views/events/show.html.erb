@@ -3,9 +3,23 @@
 <p>開催日: <%= @event.open_date %></p>
 <p>締切: <%= @event.deadline %></p>
 
+<% unless deadline?(@event.deadline) %>
+  <%= form_with model: @user, local: true do |form| %>
+    <div class="form-group">
+      <%= form.label :nickname %>
+      <%= form.text_area :nickname, size: '1x1', class: "form-control" %>
+    </div>
+
+    <%= hidden_field_tag :event_id, @event.id %>
+
+    <%= form.submit '参加する', class: "btn btn-primary" %>
+  <% end %>
+<% end %>
+
 <% if @group.present? %>
-  <h2>グループ</h2>
-  <% @group.each do %>
-    <%= group.id %>
+  <h2>参加者リスト</h2>
+  <% @group.each do |group| %>
+    <p><%= group.group_number %></p>
+    <p><%= group.user.nickname %></p>
   <% end %>
 <% end %>

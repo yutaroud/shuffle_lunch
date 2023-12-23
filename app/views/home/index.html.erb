@@ -1,1 +1,8 @@
 <p><%= link_to 'イベントを作成する', new_event_path %></p>
+
+<h2>現在開催中のランチリスト</h2>
+<% @events.each do |event| %>
+  <ul class="list-group">
+    <li class="list-group-item"><%= link_to event.title, event_path(event.id) %></li>
+  </ul>
+<% end %>

@@ -1,7 +1,7 @@
 class CreateEvents < ActiveRecord::Migration[7.1]
   def change
     create_table :events do |t|
-      t.string :title
+      t.string :title, null: false
       t.text :description
       t.integer :max_participants
       t.integer :max_group_size

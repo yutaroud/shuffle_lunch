@@ -5,7 +5,7 @@
 <p>開催日: <%= @event.open_date %></p>
 <p>締切: <%= @event.deadline %></p>
 
-<% unless deadline?(@event.deadline) %>
+<% if deadline?(@event.deadline) %>
   <%= form_with model: @user, local: true do |form| %>
     <div class="form-group">
       <%= form.label :nickname %>
@@ -21,7 +21,6 @@
 <% if @group.present? %>
   <h2>参加者リスト(<%= @group.length %>人)</h2>
   <% @group.each do |group| %>
-    <p><%= group.group_number %></p>
-    <p><%= group.user.nickname %></p>
+    <p> <%= "グループ#{group.group_number}:" if group.group_number.present? %> <%= group.user.nickname %></p>
   <% end %>
 <% end %>

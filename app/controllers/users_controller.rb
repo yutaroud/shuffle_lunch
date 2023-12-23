@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     if @user.save && @group.save
       redirect_to @event, notice: 'イベントに参加しました'
     else
-      redirect_to root
+      redirect_to @event, alert: '参加に失敗しました'
     end
   end
 

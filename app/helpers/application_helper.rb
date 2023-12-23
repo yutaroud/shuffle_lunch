@@ -1,5 +1,5 @@
 module ApplicationHelper
   def deadline?(date)
-    Time.now < date
+    DateTime.now < date
   end
 end

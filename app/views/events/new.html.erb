@@ -1,21 +1,33 @@
 <%= form_with model: @event, local: true do |form| %>
-  <%= form.label :title %>
-  <%= form.text_area :title %>
+  <div class="form-group">
+    <%= form.label :title %>
+    <%= form.text_area :title, class: "form-control" %>
+  </div>
 
-  <%= form.label :description %>
-  <%= form.text_area :description %>
+  <div class="form-group">
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+  </div>
 
-  <%= form.label :max_participants %>
-  <%= form.number_field :max_participants %>
+  <div class="form-group">
+    <%= form.label :max_participants %>
+    <%= form.number_field :max_participants, class: "form-control" %>
+  </div>
 
-  <%= form.label :max_group_size %>
-  <%= form.number_field :max_group_size %>
+  <div class="form-group">
+    <%= form.label :max_group_size %>
+    <%= form.number_field :max_group_size, class: "form-control" %>
+  </div>
 
-  <%= form.label :open_date %>
-  <%= form.date_field :open_date %>
+  <div class="form-group">
+    <%= form.label :open_date %>
+    <%= form.date_field :open_date, class: "form-control" %>
+  </div>
 
-  <%= form.label :deadline %>
-  <%= form.date_field :deadline %>
+  <div class="form-group">
+    <%= form.label :deadline %>
+    <%= form.date_field :deadline, class: "form-control" %>
+  </div>
 
-  <%= form.submit %>
+  <%= form.submit '作成', class: "btn btn-primary" %>
 <% end %>
